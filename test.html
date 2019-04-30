@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Table with Add and Delete Row Feature</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
+
+
+<script src="main.js"></script>
+<link rel="stylesheet" href="style.css">
+<script src="format.js" ></script>
+</head>
+<body>
+    <div class="area"></div><nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="http://justinfarrow.com">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            Dashboard
+                        </span>
+                    </a>
+                  
+                </li>
+            
+            
+                <li>
+                   <a href="#">
+                        <i class="fa fa-map-marker fa-2x"></i>
+                        <span class="nav-text">
+                            Maps
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                       <i class="fa fa-info fa-2x"></i>
+                        <span class="nav-text">
+                            Documentation
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="logout">
+                <li>
+                   <a href="#">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+
+    <div class="container">
+       
+        <div class="col-lg-6">
+            <div class="col-lg-2">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6"><h2>User Details</h2>  </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-info add-new add-newuser"><i class="fa fa-plus"></i></button>
+                       
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3">
+                            <!-- <button type="button" class="btn btn-success add-new"> -->
+                                    <!-- <a href="" class="btn btn-success add-new fa fa-plus" data-toggle="modal" data-target="#modalRegisterForm">
+                                    Add Bill</a>
+                                </button>
+                            -->
+                        </div>
+                        
+
+                </div>
+            </div>
+            <table class="table table-bordered table-user">
+                <thead>
+                    <tr>
+                        <th>Name</th>                       
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="renderusers">
+                    <!-- <tr>
+                        <td>John Doe</td>                       
+                        <td>
+							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Peter Parker</td>                       
+                        <td>
+							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr> -->
+                    <!-- <div ></div> -->
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+    </div> 
+    <div class="col-lg-5">
+
+            <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-6"><h2>Bill Details </h2>  </div>
+                            
+                            <div class="col-sm-6">
+                                    <!-- <button type="button" class="btn btn-success add-new"> -->
+                                            <a href="" class="btn btn-success add-new fa fa-plus" data-toggle="modal" id="addBill" data-target="#modalRegisterForm">
+                                            </a>
+                                        <!-- </button> -->
+                                   
+                                </div>
+                                
+        
+                        </div>
+                    </div>
+                    <table class="table table-bill table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Occasion</th>                       
+                                <th>Amount</th>
+                                <!-- <th>User</th> -->
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="renderusersbill">
+                            <!-- <tr>
+                                <td>John Doe</td>                       
+                                <td>
+                                    <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                                    <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                    <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Peter Parker</td>                       
+                                <td>
+                                    <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                                    <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                    <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                </td>
+                            </tr> -->
+                            <!-- <div ></div> -->
+                        </tbody>
+                    </table>
+                    
+                </div>        </div>
+</div>    
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">New Bill</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-4">
+        <div class="md-form mb-5">
+          <!-- <i class="fa fa-user prefix grey-text"></i> -->
+          <label id="BillId"></label>
+          <label data-error="wrong" data-success="right" for="orangeForm-name">Occasion/Location</label>
+          <input type="text" id="txtOccasion" class="form-control validate">
+
+
+          
+          
+        </div>
+        <div class="md-form mb-5">
+          <!-- <i class="fa fa-envelope prefix grey-text"></i> -->
+          
+          <label data-error="wrong" data-success="right" for="orangeForm-email">Amount</label>
+          <input type="email" id="txtAmount" class="form-control validate">
+       
+        </div>
+
+        <div class="md-form mb-4">
+          <!-- <i class="fa fa-lock prefix grey-text"></i>
+          <input type="password" id="orangeForm-pass" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label> -->
+
+
+          <div class="table-wrapperbill">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6"><h2>User Details</h2>  </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-info add-new add-newbilluser"><i class="fa fa-plus"></i></button>
+                        </div>
+                        <!-- <div class="col-sm-1">
+                            <button type="button" class="btn btn-danger  calculate-amount">Split Equal</button>
+                           
+                        </div> -->
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-3">
+                                <!-- <button type="button" class="btn btn-success add-new"> -->
+                                        <!-- <a href="" class="btn btn-success add-new fa fa-plus" data-toggle="modal" data-target="#modalRegisterForm">
+                                        Add Bill</a>
+                                    </button>
+                                -->
+                            </div>
+                            
+    
+                    </div>
+                </div>
+                <table class="table table-bordered table-billuser">
+                    <thead>
+                        <tr>
+                           
+                            <th>Name</th>
+                            <th>Amount</th>                       
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="renderbillusers">                   
+                        <input type="hidden" id="e10_2" style="width:300px"/>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+
+        <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn-deep-orange" id="btnSave" data-dismiss="modal">Save</button>
+              </div>
+
+
+        </div>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+</body>
+</html>                            
