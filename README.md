@@ -7,6 +7,20 @@ The application helps you to perform the following tasks:
 4. Delete the bills
 
 
+![Alt text](https://github.com/SonaliSuri/Bill-Split/blob/master/Default%20users%20populated%20through%20ajax%20call.PNG)
+
+![Alt text](https://github.com/SonaliSuri/Bill-Split/blob/master/Add-edit-delete%20users.PNG)
+
+![Alt text](https://github.com/SonaliSuri/Bill-Split/blob/master/New%20bill.PNG)
+
+![Alt text](https://github.com/SonaliSuri/Bill-Split/blob/master/Save%20bill.PNG)
+
+![Alt text](https://github.com/SonaliSuri/Bill-Split/blob/master/View-add-delete%20bills.PNG)
+
+
+
+
+
 
 
 
